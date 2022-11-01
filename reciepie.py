@@ -32,3 +32,4 @@ while True:
         print("delete details")
     elif choice==6:
         break
+    #code breaks here and getout from the while loop
