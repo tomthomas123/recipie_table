@@ -10,7 +10,8 @@ while True:
             4. update details
             5. delete details
             6. Starting letter of name of recepi
-            7. exit
+            7. total number of dishes
+            8. exit
             """)
     choice=int(input("Enter your choice : "))
     if choice==1:
@@ -66,5 +67,12 @@ while True:
         result = mycursor.fetchall()
         for i in result:
             print(i)
-    elif choice==7:
+    elif choice ==7:
+        print("total number of dishes selected")
+        sql = "SELECT COUNT(`reciepie_name`) FROM `reciepie`"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        print(result)
+
+    elif choice==8:
         break
