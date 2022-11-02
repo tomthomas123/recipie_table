@@ -40,6 +40,16 @@ while True:
             print(i)
     elif choice==4:
         print("update selected")
+        name = input('enter the name of the recipe to be update : ')
+        zname = input('enter the updated name : ')
+
+        
+        recipiedescription= input('enter the description : ')
+        incredient = input('enter the incredients : ')
+        author = input("Enter the recipie author name : ")
+        sql = "UPDATE `reciepie` SET `reciepie_name`='"+zname+"',`reciepie_description`='"+recipiedescription+"',`reciepie_incredient`='"+incredient+"',`recipie_author`='"+author+"' WHERE `reciepie_name`='"+name+"'"
+        mycursor.execute(sql)
+        mydb.commit()
     elif choice==5:
         print("delete details")
     elif choice==6:
