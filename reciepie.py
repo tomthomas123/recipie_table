@@ -31,10 +31,16 @@ while True:
             print(i)
     elif choice==3:
         print("search selected")
+        dish = input('enter the name of dish : ')
+    
+        sql = "SELECT `id`, `reciepie_name`, `reciepie_description`, `reciepie_incredient`, `recipie_author` FROM `reciepie` WHERE `reciepie_name`='"+dish+"'"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        for i in result:
+            print(i)
     elif choice==4:
         print("update selected")
     elif choice==5:
         print("delete details")
     elif choice==6:
         break
-    #code breaks here and getout from the while loop
