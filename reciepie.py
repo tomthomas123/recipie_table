@@ -9,7 +9,8 @@ while True:
             3. search details
             4. update details
             5. delete details
-            6. exit
+            6. Starting letter of name of recepi
+            7. exit
             """)
     choice=int(input("Enter your choice : "))
     if choice==1:
@@ -57,5 +58,13 @@ while True:
         mycursor.execute(sql)
         mydb.commit()
         print("Deleted succesfully")
-    elif choice==6:
+    elif(choice==6):
+        print(' enter recipie  name first letter to get full list : ')
+        st = input('Enter the first character of the name : ')
+        sql = "SELECT * FROM `reciepie` WHERE `reciepie_name` LIKE '%"+st+"%'"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        for i in result:
+            print(i)
+    elif choice==7:
         break
